@@ -6,7 +6,7 @@
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 14:54:30 by oipadeol          #+#    #+#             */
-/*   Updated: 2021/10/18 12:20:55 by oipadeol         ###   ########.fr       */
+/*   Updated: 2021/10/19 19:42:32 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*write_arg(char c, va_list **ap, int **len, t_flag *flag)
 	return (0);
 }
 
-int		go_print(const char *s, int i, int *len, va_list *ap)
+int	go_print(const char *s, int i, int *len, va_list *ap)
 {
 	char	*arg_type;
 	char	*pos_flag;
@@ -59,10 +59,10 @@ int		go_print(const char *s, int i, int *len, va_list *ap)
 	return (i);
 }
 
-int		ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
 	int			i;
-	int 		len;
+	int			len;
 	va_list		ap;
 
 	len = 0;

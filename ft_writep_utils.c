@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printp_utils.c                                  :+:      :+:    :+:   */
+/*   ft_writep_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 03:55:44 by oipadeol          #+#    #+#             */
-/*   Updated: 2021/10/19 19:15:28 by oipadeol         ###   ########.fr       */
+/*   Updated: 2021/10/19 19:47:43 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	*write_p(unsigned long num, t_flag **flag, int ***len)
 	return (0);
 }
 
- int	return_sign(char **s, int num, int plus)
+int	return_sign(char **s, int num, int plus)
 {
 	char	*ns;
 	char	*temp;
@@ -56,7 +56,6 @@ void	*write_p(unsigned long num, t_flag **flag, int ***len)
 			ns[len + 1] = (*s)[len];
 		*s = ns;
 		free(temp);
-
 	}
 	return (0);
 }
@@ -90,10 +89,9 @@ void	*format_hash(char **s, char x)
 	new_s[0] = '0';
 	new_s[1] = x;
 	new_s[len + 2] = '\0';
-	while(*((*s)++))
+	while (*((*s)++))
 		new_s[(i++)] = *((*s) - 1);
 	*s = new_s;
 	free(temp);
-
 	return (0);
 }

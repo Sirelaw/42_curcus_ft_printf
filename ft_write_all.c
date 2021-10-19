@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils3.c                                 :+:      :+:    :+:   */
+/*   ft_write_all.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oipadeol <oipadeol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 06:59:22 by oipadeol          #+#    #+#             */
-/*   Updated: 2021/10/19 19:14:51 by oipadeol         ###   ########.fr       */
+/*   Updated: 2021/10/19 19:46:12 by oipadeol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*write_x(unsigned int num, t_flag **flag, int ***len, char c)
 {
 	char	*ns;
 	int		x;
-	
+
 	x = 0;
 	if (c == 'X')
 		x = 1;
@@ -95,21 +95,21 @@ void	*write_di(int num, t_flag **flag, int ***len)
 
 void	*write_char(char c, t_flag **flag, int ***len)
 {
-	if (((*flag) -> dot) && (!(*flag)->pres))
+	if (((*flag)->dot) && (!(*flag)->pres))
 		return (0);
 	if ((*flag)->minus)
 	{
 		(***len) += write(1, &c, 1);
 		while ((((*flag)->digit)--) && (((*flag)->digit) > 0))
-			(***len) += write(1, " ", 1);  
+			(***len) += write(1, " ", 1);
 	}
 	else
 	{
 		while ((((*flag)->digit)--) && (((*flag)->digit) > 0))
-			(***len) += write(1, " ", 1);  
+			(***len) += write(1, " ", 1);
 		(***len) += write(1, &c, 1);
-	}       
-    return (0);
+	}
+	return (0);
 }
 
 void	*write_s(char *s, t_flag **flag, int ***len)
